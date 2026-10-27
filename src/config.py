@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "india_housing_prices.csv"
+APP_SAMPLE_PATH = ROOT / "data" / "app_sample.csv"  # 30k-row sample used by the app when deploying
 MODELS_DIR = ROOT / "models"
 REPORTS_DIR = ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"

@@ -27,7 +27,12 @@ st.markdown("""
 
 @st.cache_data
 def get_data():
-    return add_targets(add_features(clean(load_data())))
+    # Use a small sample when present (needed for cloud deployment size limits).
+    if C.APP_SAMPLE_PATH.exists():
+        raw = load_data(C.APP_SAMPLE_PATH)
+    else:
+        raw = load_data()
+    return add_targets(add_features(clean(raw)))
 
 
 @st.cache_data
