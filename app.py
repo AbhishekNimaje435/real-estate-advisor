@@ -52,7 +52,7 @@ st.markdown(
 )
 
 if not models_ready():
-    st.error("Models nahi mile. Pehle `python -m src.train` chalayein.")
+    st.error("Models not found. Please run `python -m src.train` first.")
     st.stop()
 
 df = get_data()
@@ -138,8 +138,10 @@ with tab_predict:
         if len(peers):
             my_ppsqft = price * 1e5 / size
             peer_median = peers["Price_per_SqFt"].median()
-            st.info(f"Is city aur {bhk} BHK ke {len(peers):,} properties mein median price per sq ft "
-                    f"₹{peer_median:,.0f} hai. Is property ka ₹{my_ppsqft:,.0f} hai.")
+            st.info(f"Median price per sq ft for {bhk} BHK properties in {city}: ₹{peer_median:,.0f} "
+                    f"(based on {len(peers):,} properties). This property: ₹{my_ppsqft:,.0f}.")
+            st.caption("Note: The Good Investment prediction is based on size, location and property features (about 70% accurate). "
+                       "The price per sq ft comparison above is shown separately and is not an input to the model.")
 
 # ================= EXPLORE =================
 with tab_explore:
@@ -163,7 +165,7 @@ with tab_explore:
     m4.metric("Good investment rate", f"{view[C.TARGET_CLS].mean()*100:.1f}%" if len(view) else "-")
 
     if view.empty:
-        st.warning("Filters se koi property nahi mili.")
+        st.warning("No properties match the selected filters.")
     else:
         left, right = st.columns(2)
         left.subheader("Avg ₹/sq ft by city (top 15)")
@@ -187,7 +189,7 @@ with tab_explore:
 with tab_model:
     report = read_metrics()
     if report is None:
-        st.info("metrics.json nahi mila. `python -m src.train` chalayein.")
+        st.info("metrics.json not found. Please run `python -m src.train` first.")
     else:
         st.success(f"Best classifier: **{report['best_classifier']}** | "
                    f"Best regressor: **{report['best_regressor']}**")
