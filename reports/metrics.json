@@ -1,0 +1,87 @@
+{
+  "classification": {
+    "LogisticRegression": {
+      "accuracy": 0.714229851796817,
+      "f1": 0.713456712672522,
+      "roc_auc": 0.7891560074957837
+    },
+    "RandomForest": {
+      "accuracy": 0.7149728228991514,
+      "f1": 0.7192326951966411,
+      "roc_auc": 0.7841831331656377
+    },
+    "XGBoost": {
+      "accuracy": 0.712431079654323,
+      "f1": 0.7128913875224486,
+      "roc_auc": 0.7848709480155245
+    }
+  },
+  "regression": {
+    "FixedRateBaseline": {
+      "rmse": 9.72491001706479,
+      "mae": 2.6782109015549262,
+      "r2": 0.9977865020659697
+    },
+    "LinearRegression": {
+      "rmse": 2.388744360530797e-05,
+      "mae": 1.225030335906286e-05,
+      "r2": 0.9999999999999867
+    },
+    "RandomForest": {
+      "rmse": 1.0075839632094529e-10,
+      "mae": 8.299384244104285e-11,
+      "r2": 1.0
+    },
+    "XGBoost": {
+      "rmse": 0.02940886970216697,
+      "mae": 0.006598033259470817,
+      "r2": 0.9999999797574788
+    }
+  },
+  "best_classifier": "RandomForest",
+  "best_regressor": "RandomForest",
+  "classification_confusion_matrix": [
+    [
+      8948,
+      3840
+    ],
+    [
+      3449,
+      9336
+    ]
+  ],
+  "top_features_classifier": {
+    "num__Size_in_SqFt": 0.6633894222584384,
+    "num__Floor_No": 0.027527628573895624,
+    "num__Total_Floors": 0.026884840691892443,
+    "num__Age_of_Property": 0.024994543853730084,
+    "num__Year_Built": 0.024569128755571212,
+    "num__Nearby_Schools": 0.020233029264077555,
+    "num__Nearby_Hospitals": 0.01947091623201209,
+    "num__Amenities_Count": 0.014338204614116015,
+    "num__BHK": 0.014315933240364528,
+    "cat__Public_Transport_Accessibility_Low": 0.005249626730190515,
+    "cat__Furnished_Status_Furnished": 0.005192003061562372,
+    "cat__Public_Transport_Accessibility_High": 0.005156785731062948,
+    "cat__Security_Yes": 0.005131361607058314,
+    "cat__Owner_Type_Owner": 0.005107076703372805,
+    "cat__Public_Transport_Accessibility_Medium": 0.00509349508562451
+  },
+  "top_features_regressor": {
+    "cat__City_Kolkata": 0.4126096209348731,
+    "cat__City_Bangalore": 0.29841354015485355,
+    "cat__City_Hyderabad": 0.11386341420259524,
+    "cat__City_Chennai": 0.10255655343145932,
+    "cat__City_Mumbai": 0.0725568699698267,
+    "num__Price_in_Lakhs": 5.46000309629795e-10,
+    "num__Size_in_SqFt": 4.679268440174857e-10,
+    "num__Age_of_Property": 7.302180112368126e-11,
+    "num__Total_Floors": 6.082775039639215e-11,
+    "num__Year_Built": 4.7588213912760114e-11,
+    "num__Floor_No": 3.253879026121814e-11,
+    "num__Nearby_Schools": 1.2859281165377737e-11,
+    "num__Nearby_Hospitals": 1.2359969285084412e-11,
+    "cat__City_Vishakhapatnam": 1.227008118780623e-11,
+    "num__BHK": 8.011543917134167e-12
+  }
+}
