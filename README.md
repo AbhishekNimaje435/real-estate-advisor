@@ -5,7 +5,7 @@ A machine learning project that answers two questions about a residential proper
 1. **Is it a Good Investment?** (classification, based on price per sq ft compared with its city median)
 2. **What could it be worth after 5 years?** (regression, using city-level growth assumptions)
 
-The project includes an end-to-end pipeline (cleaning, EDA, training, MLflow tracking, model registry) and an interactive Streamlit app.
+The project includes an end-to-end pipeline for data cleaning, exploratory data analysis (EDA), model training, evaluation, MLflow experiment tracking, and an interactive Streamlit application.
 
 **Live app:** https://real-estate-advisor-god4sfy7oodg7y7sinxbe2.streamlit.app
 
@@ -28,7 +28,14 @@ Other findings from EDA:
 - City, state, locality, facing, furnishing, parking, amenities, schools and hospitals show almost no relationship with price per sq ft.
 - The dataset has no sale dates, so price trends over time cannot be measured.
 
-Full details are in [`docs/`](docs/) (Methodology, Findings, Model Performance, Limitations and Use Cases).
+Full details are available in the project documentation:
+
+- [Methodology](01_methodology.pdf)
+- [Findings](02_findings.pdf)
+- [Model Performance](03_model_performance.pdf)
+- [Limitations](04_limitations.pdf)
+- [Use Cases](05_use_cases.pdf)
+- [Complete Project Documentation](Project_Documentation%20(1).pdf)
 
 ---
 
@@ -87,8 +94,7 @@ The app uses `data/app_sample.csv` (30,000 random rows) so that it deploys quick
 
 **Leakage control:** the classifier does not receive price columns, because the label is derived from price.
 
-**Tracking:** all runs are logged to MLflow (`real_estate_advisor` experiment). The best classifier and regressor are registered in the MLflow Model Registry.
-
+**Tracking:** all training runs are logged to the `real_estate_advisor` MLflow experiment for experiment tracking and model comparison.
 ---
 
 ## Quick start
@@ -153,8 +159,8 @@ Read these before using the results:
 - **Missing features from the brief:** crime rate, infrastructure score, school density, sale dates, and real future prices are not in the dataset. Proxy features were used where possible.
 - **Model selection used the test set.** There was no separate validation set, so test scores are slightly optimistic.
 - **Category mismatches:** the dataset uses Owner/Builder/Broker and Ready_to_Move/Under_Construction, and Parking_Space is Yes/No only.
-
-See [`docs/`](docs/) for the full discussion.
+- 
+See the [Limitations document](04_limitations.pdf) for the full discussion..
 
 ---
 
