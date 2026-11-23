@@ -95,6 +95,7 @@ The app uses `data/app_sample.csv` (30,000 random rows) so that it deploys quick
 **Leakage control:** the classifier does not receive price columns, because the label is derived from price.
 
 **Tracking:** all training runs are logged to the `real_estate_advisor` MLflow experiment for experiment tracking and model comparison.
+
 ---
 
 ## Quick start
@@ -159,8 +160,8 @@ Read these before using the results:
 - **Missing features from the brief:** crime rate, infrastructure score, school density, sale dates, and real future prices are not in the dataset. Proxy features were used where possible.
 - **Model selection used the test set.** There was no separate validation set, so test scores are slightly optimistic.
 - **Category mismatches:** the dataset uses Owner/Builder/Broker and Ready_to_Move/Under_Construction, and Parking_Space is Yes/No only.
-- 
-See the [Limitations document](04_limitations.pdf) for the full discussion..
+
+See the [Limitations document](04_limitations.pdf) for the full discussion.
 
 ---
 
@@ -183,4 +184,3 @@ Python · pandas · NumPy · scikit-learn · XGBoost · MLflow · Streamlit · M
 ## Acknowledgements
 
 Built as a data science capstone project. Dataset: `india_housing_prices.csv` (250,000 rows).
-
