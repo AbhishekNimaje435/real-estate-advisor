@@ -28,8 +28,8 @@
       "r2": 0.9999999999991855
     },
     "RandomForest": {
-      "rmse": 1.0000150409412149e-10,
-      "mae": 8.234082308433698e-11,
+      "rmse": 1.0001290920427319e-10,
+      "mae": 8.234938206896914e-11,
       "r2": 1.0
     },
     "XGBoost": {
@@ -39,7 +39,6 @@
     }
   },
   "best_classifier": "RandomForest",
-  "best_regressor": "RandomForest",
   "classification_confusion_matrix": [
     [
       17625,
@@ -67,6 +66,7 @@
     "cat__Owner_Type_Broker": 0.004716110921696741,
     "cat__Owner_Type_Owner": 0.004709090167707796
   },
+  "best_regressor": "RandomForest",
   "top_features_regressor": {
     "cat__City_Kolkata": 0.4132664984297201,
     "cat__City_Bangalore": 0.30068074233101455,
