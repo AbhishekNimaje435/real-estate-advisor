@@ -54,7 +54,9 @@ real_estate_advisor/
 │   ├── train.py            # Training, evaluation, MLflow logging, saving models
 │   └── predict.py          # Single-property prediction used by the app
 ├── data/
-│   └── app_sample.csv      # 30,000-row sample used by the app
+│   ├── app_sample.csv      # 30,000-row sample used by the app
+│   └── raw/
+│       └── india_housing_prices.csv   # Full dataset (not in repo, see Dataset)
 ├── models/
 │   ├── classifier.joblib   # Trained Good Investment classifier
 │   └── regressor.joblib    # Trained 5-year price regressor
@@ -69,7 +71,7 @@ real_estate_advisor/
 
 - **File:** `india_housing_prices.csv`
 - **Rows:** 250,000 properties, 23 original columns
-- **Not included in this repository** because of its size (41 MB). Place it in `data/` to re-run training.
+- **Not included in this repository** because of its size (41 MB). Place it in `data/raw/` to re-run training.
 
 The app uses `data/app_sample.csv` (30,000 random rows) so that it deploys quickly. The models were trained on all 250,000 rows.
 
@@ -127,7 +129,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ### Re-training the models
 
-1. Place `india_housing_prices.csv` in `data/`.
+1. Place `india_housing_prices.csv` in `data/raw/`.
 2. Run:
 ```powershell
 python -m src.eda      # EDA charts -> reports/figures/
